@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MarkdownEditor</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./node_modules/element-ui/lib/theme-default/index.css">
+        <script src="./lib/vue.js"></script>
+        <script src="./node_modules/element-ui/lib/index.js"></script>
+    </head>
+    <body>
+        <div id="editor">
+            <el-button v-on:click="download" class='position-right'>保存为 html 文件<i class="el-icon-document el-icon--right"></i>
+            </el-button>
+            <textarea v-bind:value="input" v-on:input="update"></textarea>
+            <div id='messageHtml' v-html="compiledMarkdown"></div>
+        </div>
+        <script src='index.js'></script>
+    </body>
+</html>
